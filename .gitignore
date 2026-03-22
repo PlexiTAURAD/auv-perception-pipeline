@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Model weights
+model/
+*.onnx
+*.pt
+*.pth
+
+# Data / video
+data/
+*.mp4
+*.avi
+*.mkv
+
+# Environment
+.env
+venv/
+*.egg-info/
