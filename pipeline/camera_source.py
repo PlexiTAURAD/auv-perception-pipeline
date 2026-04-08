@@ -11,7 +11,6 @@ class CameraSource:
         Gst.init(None) # Initializes the GStreamer library
 
     def start_pipeline(self):
-        ### change src to some saved video later ###
         pipeline_str = "filesrc location=data/test_video.mp4 ! decodebin ! videoscale ! videorate ! videoconvert ! video/x-raw,format=RGB,width=640,height=640,framerate=30/1 ! appsink name=mysink max-buffers=1 drop=true emit-signals=true"        
         self.pipeline = Gst.parse_launch(pipeline_str) # creates pipeline
         self.sink = self.pipeline.get_by_name("mysink") # gets appsink element
@@ -44,7 +43,7 @@ class CameraSource:
                 dtype=np.uint8, 
                 buffer=map_info.data # The data from the mapped buffer
             )
-            self.frame_buffer.push_frame(image_array) #### Make sure you define this ASAP
+            self.frame_buffer.push_frame(image_array)
 
         finally:
             buffer.unmap(map_info) 

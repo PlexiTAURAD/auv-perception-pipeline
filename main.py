@@ -39,7 +39,7 @@ def main():
     finally:
         # Cleanly sever hardware locks and OS threads
         camera_source.stop_pipeline()
-        sonar_source.stop() # Or whatever your stop method is named
+        sonar_source.stop() 
 
 if __name__ == "__main__":
     main()
